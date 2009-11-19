@@ -30,4 +30,6 @@ setup(name='txSpy',
       author_email='eikke eikke com',
       packages=['txspy', ],
       license='LGPL-2.1',
+      requires=['pygooglechart', 'twisted (>8.0)', ],
+      url='http://github.com/NicolasT/txSpy',
      )
