@@ -270,7 +270,7 @@ class ObjectBrowser(object, service.Service, resource.Resource,
                 samples.append(0)
 
             # Prune object types for which we no longer have stats
-            if not any(lambda s: s != 0 for s in samples):
+            if all(s == 0 for s in samples):
                 self.history.pop(typeName)
 
         # Update timestamp bookkeeping
