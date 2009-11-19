@@ -148,24 +148,19 @@ def getTypeName(object_):
 
 
 # TODO Is there no C builtin for this somehow?
-def count(iterable):
-    '''Count the number of items in an iterable
+count = lambda iterable: reduce(lambda i, _: i + 1, iterable, 0)
+count.__doc__ = '''
+Count the number of items in an iterable
 
-    Note: this function consumes the iterable.
+Note: this function consumes the iterable.
 
-    :Parameters:
-        iterable : iterable
-          Iterable to count
+:Parameters:
+    iterable : iterable
+      Iterable to count
 
-    :return: Number of items in the given iterable
-    :rtype: number
-    '''
-    result = 0
-
-    for _ in iterable:
-        result += 1
-
-    return result
+:return: Number of items in the given iterable
+:rtype: number
+'''
 
 
 def renderTemplate(template, values):
