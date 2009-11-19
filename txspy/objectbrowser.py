@@ -517,8 +517,9 @@ if __name__ == '__builtin__':
     
     application = service.Application('web')
 
-    objectbrowser = service.IService(ObjectBrowser(5, 200))
+    objectbrowser = ObjectBrowser(5, 200)
     objectbrowser.enableDebug()
+    objectbrowser = service.IService(objectbrowser)
     objectbrowser.setName('objectbrowser')
     objectbrowser.setServiceParent(application)
     
